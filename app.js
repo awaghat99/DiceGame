@@ -39,7 +39,7 @@ homeButton.addEventListener("click", () => {
 // Create a roll dice function that will create a roll animation
 const rollDice = (dice) => {
     // `roll the dice` by generting random number between 1 and 6
-    let rollNumber = Math.floor(Math.random() * 3 + 1);
+    let rollNumber = Math.floor(Math.random() * 6 + 1);
     // Depending on the number add a class so that the relavent face of the die shows
     for (let i = 1; i <= 6; i++) {
         dice.classList.remove("show-" + i);
@@ -73,7 +73,7 @@ roll.onclick = () => {
     } else {
         score += rollScore;
         scoreCount.textContent = `Score: ${score}`;
-        if (score >= 10) {
+        if (score >= 20) {
             setTimeout(() => {
                 singlePlayer.style.display = "none";
                 winMessage.style.display = "block";
@@ -112,6 +112,12 @@ let player2Score = 0;
 backTwo.addEventListener("click", () => {
     doublePlayer.style.display = "none";
     turnIs = "1";
+    player1Score = 0;
+    player2Score = 0;
+    oneScore.textContent = "Player 1 Score : 0";
+    twoScore.textContent = "Player 2 Score : 0";
+    twoScore.style.backgroundColor = "white";
+    oneScore.style.backgroundColor = "red";
     home.style.display = "block";
 });
 
@@ -129,7 +135,7 @@ rollTwo.onclick = () => {
         } else {
             player1Score += rollScoreTwo;
             oneScore.textContent = `Player 1 Score : ${player1Score}`;
-            if (player1Score >= 10) {
+            if (player1Score >= 20) {
                 setTimeout(() => {
                     doublePlayer.style.display = "none";
                     winMessage.style.display = "block";
@@ -151,13 +157,17 @@ rollTwo.onclick = () => {
         } else {
             player2Score += rollScoreTwo;
             twoScore.textContent = `Player 2 Score : ${player2Score}`;
-            if (player2Score >= 10) {
+            if (player2Score >= 20) {
                 setTimeout(() => {
                     doublePlayer.style.display = "none";
                     winMessage.style.display = "block";
                     player1Score = 0;
                     player2Score = 0;
+                    turnIs = "1";
                     twoScore.textContent = `Player 2 Score: 0`;
+                    oneScore.textContent = `Player 1 Score: 0`;
+                    twoScore.style.backgroundColor = "white";
+                    oneScore.style.backgroundColor = "red";
                 }, 1400);
             }
         }
