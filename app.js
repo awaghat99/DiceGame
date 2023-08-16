@@ -4,7 +4,18 @@ const start2Player = document.getElementById("start-2-player");
 const home = document.getElementById("home");
 const singlePlayer = document.getElementById("single-player");
 const doublePlayer = document.getElementById("double-player");
+const instructionButton = document.getElementById("instruction");
+const instructionPage = document.getElementById("instructions");
+const closeInstructions = document.getElementById("close-instructions")
 
+// initialise the instructions button
+instructionButton.addEventListener("click", () => {
+    instructionPage.style.display = "block";
+});
+
+closeInstructions.addEventListener("click", ()=>{
+    instructionPage.style.display = "none"
+})
 // Add an instuction to the button to initialise the game
 start1Player.addEventListener("click", () => {
     home.style.display = "none";
