@@ -102,6 +102,8 @@ const rollTwo = document.getElementById("roll-two");
 const dice2 = document.getElementById("dice-two");
 const oneScore = document.getElementById("player-1-score");
 const twoScore = document.getElementById("player-2-score");
+const oneHold = document.getElementById("player-1-hold");
+const twoHold = document.getElementById("player-2-hold");
 
 let turnIs = "1";
 let player1Score = 0;
@@ -162,4 +164,18 @@ rollTwo.onclick = () => {
     }
 };
 
+oneHold.addEventListener("click", () => {
+    if (turnIs === "1") {
+        oneScore.style.backgroundColor = "white";
+        twoScore.style.backgroundColor = "red";
+        turnIs = "2";
+    }
+});
 
+twoHold.addEventListener("click", () => {
+    if (turnIs === "2") {
+        twoScore.style.backgroundColor = "white";
+        oneScore.style.backgroundColor = "red";
+        turnIs = "1";
+    }
+});
