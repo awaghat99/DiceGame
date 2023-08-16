@@ -104,6 +104,7 @@ const oneScore = document.getElementById("player-1-score");
 const twoScore = document.getElementById("player-2-score");
 const oneHold = document.getElementById("player-1-hold");
 const twoHold = document.getElementById("player-2-hold");
+const finishMessage = document.getElementById("finish-message");
 
 let turnIs = "1";
 let player1Score = 0;
@@ -135,9 +136,10 @@ rollTwo.onclick = () => {
         } else {
             player1Score += rollScoreTwo;
             oneScore.textContent = `Player 1 Score : ${player1Score}`;
-            if (player1Score >= 20) {
+            if (player1Score >= 5) {
                 setTimeout(() => {
                     doublePlayer.style.display = "none";
+                    finishMessage.textContent = "player 1 wins!";
                     winMessage.style.display = "block";
                     player1Score = 0;
                     player2Score = 0;
@@ -160,6 +162,7 @@ rollTwo.onclick = () => {
             if (player2Score >= 20) {
                 setTimeout(() => {
                     doublePlayer.style.display = "none";
+                    finishMessage.textContent = "player 2 wins!";
                     winMessage.style.display = "block";
                     player1Score = 0;
                     player2Score = 0;
