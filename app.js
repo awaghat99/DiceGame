@@ -128,7 +128,7 @@ backTwo.addEventListener("click", () => {
     player2Score = 0;
     oneScore.textContent = "Player 1 Score : 0";
     twoScore.textContent = "Player 2 Score : 0";
-    twoScore.style.backgroundColor = "white";
+    twoScore.style.backgroundColor = "#7395ae";
     oneScore.style.backgroundColor = "red";
     home.style.display = "block";
 });
@@ -141,7 +141,7 @@ rollTwo.onclick = () => {
                 player1Score = 0;
                 turnIs = "2";
                 oneScore.textContent = "Player 1 Score : 0";
-                oneScore.style.backgroundColor = "white";
+                oneScore.style.backgroundColor = "#7395ae";
                 twoScore.style.backgroundColor = "red";
             }, 1400);
         } else {
@@ -164,7 +164,7 @@ rollTwo.onclick = () => {
                 player2Score = 0;
                 turnIs = "1";
                 twoScore.textContent = "Player 2 Score : 0";
-                twoScore.style.backgroundColor = "white";
+                twoScore.style.backgroundColor = "#7395ae";
                 oneScore.style.backgroundColor = "red";
             }, 1400);
         } else {
@@ -180,7 +180,7 @@ rollTwo.onclick = () => {
                     turnIs = "1";
                     twoScore.textContent = `Player 2 Score: 0`;
                     oneScore.textContent = `Player 1 Score: 0`;
-                    twoScore.style.backgroundColor = "white";
+                    twoScore.style.backgroundColor = "#7395ae";
                     oneScore.style.backgroundColor = "red";
                 }, 1400);
             }
@@ -190,7 +190,7 @@ rollTwo.onclick = () => {
 
 oneHold.addEventListener("click", () => {
     if (turnIs === "1") {
-        oneScore.style.backgroundColor = "white";
+        oneScore.style.backgroundColor = "#7395ae";
         twoScore.style.backgroundColor = "red";
         turnIs = "2";
     }
@@ -198,7 +198,7 @@ oneHold.addEventListener("click", () => {
 
 twoHold.addEventListener("click", () => {
     if (turnIs === "2") {
-        twoScore.style.backgroundColor = "white";
+        twoScore.style.backgroundColor = "#7395ae";
         oneScore.style.backgroundColor = "red";
         turnIs = "1";
     }

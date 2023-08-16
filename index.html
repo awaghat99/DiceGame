@@ -5,13 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dice Game</title>
         <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <div id="home">
             <h1>Welcome to the Dice game!</h1>
-            <button id="start-1-player" class="home-button">single- player</button>
-            <button id="start-2-player" class="home-button">2-player</button>
-            <button id="instruction" class="home-button">Instructions</button>
+            <div class="button-holder">
+                <button id="start-1-player" class="home-button button">Single-Player</button>
+                <button id="start-2-player" class="home-button button">2-Player</button>
+                <button id="instruction" class="home-button button">Instructions</button>
+            </div>
             <div id="instructions">
                 <div id="one-player-instructions">
                     <button id="close-instructions">x</button>
@@ -35,7 +43,7 @@
             </div>
         </div>
         <div id="single-player">
-            <button id="back">Back to Home</button>
+            <button id="back" class="button">Back to Home</button>
             <h2>1 Player Game</h2>
             <div id="dice" class="dice">
                 <div id="side-one" class="side one">
@@ -72,19 +80,19 @@
                     <div class="dot six-6"></div>
                 </div>
             </div>
-            <button id="roll">roll</button>
+            <button id="roll" class="button">roll</button>
             <h2 id="score">Score : 0</h2>
         </div>
         <div id="loss">
             <h2>You Lose!</h2>
-            <button id="again-loss">Play again</button>
+            <button id="again-loss" class="button">Play again</button>
         </div>
         <div id="win">
             <h2 id="finish-message">You Win!</h2>
-            <button id="again-win">Play again</button>
+            <button id="again-win" class="button">Play again</button>
         </div>
         <div id="double-player">
-            <button id="back-two">Back to Home</button>
+            <button id="back-two" class="button">Back to Home</button>
             <h2>Welcome to the two player game</h2>
             <div id="dice-two" class="dice">
                 <div id="side-one-dice-two" class="side one">
@@ -121,14 +129,14 @@
                     <div class="dot six-6"></div>
                 </div>
             </div>
-            <button id="roll-two">roll</button>
+            <button id="roll-two" class="button">roll</button>
             <div id="player-1">
                 <h2 id="player-1-score">Player 1 Score: 0</h2>
-                <button id="player-1-hold">hold</button>
+                <button id="player-1-hold" class="button">hold</button>
             </div>
             <div id="player-2">
                 <h2 id="player-2-score">Player 2 Score: 0</h2>
-                <button id="player-2-hold">hold</button>
+                <button id="player-2-hold" class="button">hold</button>
             </div>
         </div>
 

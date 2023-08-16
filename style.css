@@ -1,5 +1,40 @@
+body {
+    background-color: #7395ae;
+    color: white;
+    font-family: 'Roboto', sans-serif
+}
+
 #home {
     text-align: center;
+}
+
+.button-holder {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    width: 20%;  
+    height: 60vh;
+    justify-content: space-around;
+}
+
+.button {
+    padding: 15px 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #5d5c61;
+    color: white;
+    box-shadow: 5px 5px 5px black;
+}
+
+.button:hover {
+    background-color: #48484b;
+}
+
+.button:active {
+    transform: translateY(5px);
+    box-shadow: inset 5px 5px 5px black;
 }
 
 #single-player {
@@ -30,10 +65,13 @@
     box-sizing: border-box;
     display: none;
     position: absolute;
-    background-color: red;
-    width: 50%;
+    background-color: #938E94;
+    width: 45%;
     padding: 35px 100px;
-    top: 0;
+    top: 2%;
+    left: 27%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px black;
 }
 
 #close-instructions {
