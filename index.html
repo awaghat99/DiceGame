@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dice Game</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div id="home">
+            <h1>Welcome to the Dice game!</h1>
+            <button id="start-1-player">Start Game</button>
+        </div>
+        <div id="single-player">
+            <button id="back">Back to Home</button>
+            <h2>1 Player Game</h2>
+            <div id="dice" class="dice">
+                <div id="side-one" class="side one">
+                    <div class="dot one-1"></div>
+                </div>
+                <div id="side-two" class="side two">
+                    <div class="dot two-1"></div>
+                    <div class="dot two-2"></div>
+                </div>
+                <div id="side-three" class="side three">
+                    <div class="dot three-1"></div>
+                    <div class="dot three-2"></div>
+                    <div class="dot three-3"></div>
+                </div>
+                <div id="side-four" class="side four">
+                    <div class="dot four-1"></div>
+                    <div class="dot four-2"></div>
+                    <div class="dot four-3"></div>
+                    <div class="dot four-4"></div>
+                </div>
+                <div id="side-five" class="side five">
+                    <div class="dot five-1"></div>
+                    <div class="dot five-2"></div>
+                    <div class="dot five-3"></div>
+                    <div class="dot five-4"></div>
+                    <div class="dot five-5"></div>
+                </div>
+                <div id="side-six" class="side six">
+                    <div class="dot six-1"></div>
+                    <div class="dot six-2"></div>
+                    <div class="dot six-3"></div>
+                    <div class="dot six-4"></div>
+                    <div class="dot six-5"></div>
+                    <div class="dot six-6"></div>
+                </div>
+            </div>
+            <button id="roll">roll</button>
+            <h2 id="score">Score : 0</h2>
+        </div>
+        <div id="loss">
+            <h2>You Lose!</h2>
+            <button id="again-loss">Play again</button>
+        </div>
+        <div id="win">
+            <h2>You Win!</h2>
+            <button id="again-win">Play again</button>
+        </div>
+
+        <script src="./app.js"></script>
+    </body>
+</html>
