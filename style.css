@@ -7,6 +7,11 @@
     display: none;
 }
 
+#double-player {
+    text-align: center;
+    display: none;
+}
+
 #loss {
     text-align: center;
     display: none;
@@ -15,6 +20,10 @@
 #win {
     text-align: center;
     display: none;
+}
+
+#player-1-score {
+    background-color: red;
 }
 
 .dice {

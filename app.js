@@ -1,7 +1,9 @@
 // Grab elements from the home page
 const start1Player = document.getElementById("start-1-player");
+const start2Player = document.getElementById("start-2-player");
 const home = document.getElementById("home");
 const singlePlayer = document.getElementById("single-player");
+const doublePlayer = document.getElementById("double-player");
 
 // Add an instuction to the button to initialise the game
 start1Player.addEventListener("click", () => {
@@ -9,10 +11,15 @@ start1Player.addEventListener("click", () => {
     singlePlayer.style.display = "block";
 });
 
+start2Player.addEventListener("click", () => {
+    home.style.display = "none";
+    doublePlayer.style.display = "block";
+});
+
 // INSTRUCTIONS FOR THE SINGLE PLAYER GAME
 // Grab the elements from the single player game page
 const homeButton = document.getElementById("back");
-const dice = document.getElementById("dice");
+const dice1 = document.getElementById("dice");
 const roll = document.getElementById("roll");
 const scoreCount = document.getElementById("score");
 const winMessage = document.getElementById("win");
@@ -30,9 +37,9 @@ homeButton.addEventListener("click", () => {
     home.style.display = "block";
 });
 // Create a roll dice function that will create a roll animation
-const rollDice = () => {
+const rollDice = (dice) => {
     // `roll the dice` by generting random number between 1 and 6
-    let rollNumber = Math.floor(Math.random() * 6 + 1);
+    let rollNumber = Math.floor(Math.random() * 3 + 1);
     // Depending on the number add a class so that the relavent face of the die shows
     for (let i = 1; i <= 6; i++) {
         dice.classList.remove("show-" + i);
@@ -54,7 +61,7 @@ const rollDice = () => {
 };
 // Set up the roll button
 roll.onclick = () => {
-    rollScore = rollDice();
+    let rollScore = rollDice(dice1);
     // On each roll check for a win and loss and return to relavent screen and then update score
     if (rollScore === 1) {
         setTimeout(() => {
@@ -86,3 +93,73 @@ winButton.addEventListener("click", () => {
     winMessage.style.display = "none";
     home.style.display = "block";
 });
+
+// INSTRUCTIONS FOR THE 2 PLAYER GAME
+// grab elements from the 2 player game
+
+const backTwo = document.getElementById("back-two");
+const rollTwo = document.getElementById("roll-two");
+const dice2 = document.getElementById("dice-two");
+const oneScore = document.getElementById("player-1-score");
+const twoScore = document.getElementById("player-2-score");
+
+let turnIs = "1";
+let player1Score = 0;
+let player2Score = 0;
+
+backTwo.addEventListener("click", () => {
+    doublePlayer.style.display = "none";
+    turnIs = "1";
+    home.style.display = "block";
+});
+
+rollTwo.onclick = () => {
+    let rollScoreTwo = rollDice(dice2);
+    if (turnIs === "1") {
+        if (rollScoreTwo === 1) {
+            setTimeout(() => {
+                player1Score = 0;
+                turnIs = "2";
+                oneScore.textContent = "Player 1 Score : 0";
+                oneScore.style.backgroundColor = "white";
+                twoScore.style.backgroundColor = "red";
+            }, 1400);
+        } else {
+            player1Score += rollScoreTwo;
+            oneScore.textContent = `Player 1 Score : ${player1Score}`;
+            if (player1Score >= 10) {
+                setTimeout(() => {
+                    doublePlayer.style.display = "none";
+                    winMessage.style.display = "block";
+                    player1Score = 0;
+                    player2Score = 0;
+                    oneScore.textContent = `Player 1 Score: 0`;
+                }, 1400);
+            }
+        }
+    } else if (turnIs === "2") {
+        if (rollScoreTwo === 1) {
+            setTimeout(() => {
+                player2Score = 0;
+                turnIs = "1";
+                twoScore.textContent = "Player 2 Score : 0";
+                twoScore.style.backgroundColor = "white";
+                oneScore.style.backgroundColor = "red";
+            }, 1400);
+        } else {
+            player2Score += rollScoreTwo;
+            twoScore.textContent = `Player 2 Score : ${player2Score}`;
+            if (player2Score >= 10) {
+                setTimeout(() => {
+                    doublePlayer.style.display = "none";
+                    winMessage.style.display = "block";
+                    player1Score = 0;
+                    player2Score = 0;
+                    twoScore.textContent = `Player 2 Score: 0`;
+                }, 1400);
+            }
+        }
+    }
+};
+
+
