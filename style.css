@@ -1,7 +1,7 @@
 body {
     background-color: #7395ae;
     color: white;
-    font-family: 'Roboto', sans-serif
+    font-family: "Roboto", sans-serif;
 }
 
 #home {
@@ -12,7 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 50px auto;
-    width: 20%;  
+    width: 20%;
     height: 60vh;
     justify-content: space-around;
 }
@@ -57,15 +57,15 @@ body {
     display: none;
 }
 
-#player-1-score {
-    background-color: red;
+#player-1 {
+    background-color: #557a95;
 }
 
 #instructions {
     box-sizing: border-box;
     display: none;
     position: absolute;
-    background-color: #938E94;
+    background-color: #938e94;
     width: 45%;
     padding: 35px 100px;
     top: 2%;
@@ -101,7 +101,7 @@ body {
 
 .side {
     position: absolute;
-    background-color: blue;
+    background-color: #b1a296;
     border-radius: 5px;
     width: 100px;
     height: 100px;
@@ -205,4 +205,34 @@ body {
 .six-5 {
     top: 50%;
     left: 80%;
+}
+
+.roll {
+    margin-top: 25px;
+}
+
+.player-holder {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 35px auto;
+}
+
+.player-card {
+    width: 45%;
+    border-radius: 10px;
+    padding: 40px 10px;
+}
+
+.player-score {
+    font-size: 26px;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+.message {
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

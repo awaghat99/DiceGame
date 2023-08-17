@@ -115,6 +115,8 @@ const oneScore = document.getElementById("player-1-score");
 const twoScore = document.getElementById("player-2-score");
 const oneHold = document.getElementById("player-1-hold");
 const twoHold = document.getElementById("player-2-hold");
+const oneCard = document.getElementById("player-1");
+const twoCard = document.getElementById("player-2");
 const finishMessage = document.getElementById("finish-message");
 
 let turnIs = "1";
@@ -128,8 +130,8 @@ backTwo.addEventListener("click", () => {
     player2Score = 0;
     oneScore.textContent = "Player 1 Score : 0";
     twoScore.textContent = "Player 2 Score : 0";
-    twoScore.style.backgroundColor = "#7395ae";
-    oneScore.style.backgroundColor = "red";
+    twoCard.style.backgroundColor = "#7395ae";
+    oneCard.style.backgroundColor = "#557a95";
     home.style.display = "block";
 });
 
@@ -141,16 +143,16 @@ rollTwo.onclick = () => {
                 player1Score = 0;
                 turnIs = "2";
                 oneScore.textContent = "Player 1 Score : 0";
-                oneScore.style.backgroundColor = "#7395ae";
-                twoScore.style.backgroundColor = "red";
+                oneCard.style.backgroundColor = "#7395ae";
+                twoCard.style.backgroundColor = "#557a95";
             }, 1400);
         } else {
             player1Score += rollScoreTwo;
             oneScore.textContent = `Player 1 Score : ${player1Score}`;
-            if (player1Score >= 5) {
+            if (player1Score >= 20) {
                 setTimeout(() => {
                     doublePlayer.style.display = "none";
-                    finishMessage.textContent = "player 1 wins!";
+                    finishMessage.textContent = "Player 1 wins!";
                     winMessage.style.display = "block";
                     player1Score = 0;
                     player2Score = 0;
@@ -164,8 +166,8 @@ rollTwo.onclick = () => {
                 player2Score = 0;
                 turnIs = "1";
                 twoScore.textContent = "Player 2 Score : 0";
-                twoScore.style.backgroundColor = "#7395ae";
-                oneScore.style.backgroundColor = "red";
+                twoCard.style.backgroundColor = "#7395ae";
+                oneCard.style.backgroundColor = "#557a95";
             }, 1400);
         } else {
             player2Score += rollScoreTwo;
@@ -173,15 +175,15 @@ rollTwo.onclick = () => {
             if (player2Score >= 20) {
                 setTimeout(() => {
                     doublePlayer.style.display = "none";
-                    finishMessage.textContent = "player 2 wins!";
+                    finishMessage.textContent = "Player 2 wins!";
                     winMessage.style.display = "block";
                     player1Score = 0;
                     player2Score = 0;
                     turnIs = "1";
                     twoScore.textContent = `Player 2 Score: 0`;
                     oneScore.textContent = `Player 1 Score: 0`;
-                    twoScore.style.backgroundColor = "#7395ae";
-                    oneScore.style.backgroundColor = "red";
+                    twoCard.style.backgroundColor = "#7395ae";
+                    oneCard.style.backgroundColor = "#557a95";
                 }, 1400);
             }
         }
@@ -190,16 +192,16 @@ rollTwo.onclick = () => {
 
 oneHold.addEventListener("click", () => {
     if (turnIs === "1") {
-        oneScore.style.backgroundColor = "#7395ae";
-        twoScore.style.backgroundColor = "red";
+        oneCard.style.backgroundColor = "#7395ae";
+        twoCard.style.backgroundColor = "#557a95";
         turnIs = "2";
     }
 });
 
 twoHold.addEventListener("click", () => {
     if (turnIs === "2") {
-        twoScore.style.backgroundColor = "#7395ae";
-        oneScore.style.backgroundColor = "red";
+        twoCard.style.backgroundColor = "#7395ae";
+        oneCard.style.backgroundColor = "#557a95";
         turnIs = "1";
     }
 });
