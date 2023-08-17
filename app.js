@@ -95,6 +95,7 @@ roll.onclick = () => {
     }
 };
 
+// set up buttons to return to menu once game is finished
 lossButton.addEventListener("click", () => {
     lossMessage.style.display = "none";
     home.style.display = "block";
@@ -119,10 +120,12 @@ const oneCard = document.getElementById("player-1");
 const twoCard = document.getElementById("player-2");
 const finishMessage = document.getElementById("finish-message");
 
+// Initialise starting variables
 let turnIs = "1";
 let player1Score = 0;
 let player2Score = 0;
 
+// back to home button for the two player game
 backTwo.addEventListener("click", () => {
     doublePlayer.style.display = "none";
     turnIs = "1";
@@ -135,9 +138,11 @@ backTwo.addEventListener("click", () => {
     home.style.display = "block";
 });
 
+// roll button for 2 player game. Handles which players turn it is, and game mechanics
 rollTwo.onclick = () => {
     let rollScoreTwo = rollDice(dice2);
     if (turnIs === "1") {
+        // if the roll is 1, switch turn to player 2
         if (rollScoreTwo === 1) {
             setTimeout(() => {
                 player1Score = 0;
@@ -147,8 +152,10 @@ rollTwo.onclick = () => {
                 twoCard.style.backgroundColor = "#557a95";
             }, 1400);
         } else {
+            // If not a one add the score
             player1Score += rollScoreTwo;
             oneScore.textContent = `Player 1 Score : ${player1Score}`;
+            // Check for a win, update scores and go to the win screen
             if (player1Score >= 20) {
                 setTimeout(() => {
                     doublePlayer.style.display = "none";
@@ -160,6 +167,7 @@ rollTwo.onclick = () => {
                 }, 1400);
             }
         }
+        // Same as above for player 2
     } else if (turnIs === "2") {
         if (rollScoreTwo === 1) {
             setTimeout(() => {
@@ -190,6 +198,7 @@ rollTwo.onclick = () => {
     }
 };
 
+// If players hold, switch turns
 oneHold.addEventListener("click", () => {
     if (turnIs === "1") {
         oneCard.style.backgroundColor = "#7395ae";
