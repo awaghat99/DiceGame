@@ -37,6 +37,7 @@ const winMessage = document.getElementById("win");
 const lossMessage = document.getElementById("loss");
 const lossButton = document.getElementById("again-loss");
 const winButton = document.getElementById("again-win");
+const finishMessage = document.getElementById("finish-message");
 // Initialise score and prev variables
 let prevRoll = 0;
 let score = 0;
@@ -87,6 +88,7 @@ roll.onclick = () => {
         if (score >= 20) {
             setTimeout(() => {
                 singlePlayer.style.display = "none";
+                finishMessage.textContent = "Congratulations! You Win!"
                 winMessage.style.display = "block";
                 score = 0;
                 scoreCount.textContent = `Score: 0`;
@@ -118,7 +120,7 @@ const oneHold = document.getElementById("player-1-hold");
 const twoHold = document.getElementById("player-2-hold");
 const oneCard = document.getElementById("player-1");
 const twoCard = document.getElementById("player-2");
-const finishMessage = document.getElementById("finish-message");
+
 
 // Initialise starting variables
 let turnIs = "1";
